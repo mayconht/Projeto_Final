@@ -5,7 +5,7 @@ import validation
 from os import listdir
 
 ALLOWED_EXTENSIONS = set(['csv', 'xls', 'xlsx'])
-UPLOAD_FOLDER = os.path.dirname(__file__) + "\\Upload\\"
+UPLOAD_FOLDER = os.path.dirname(__file__) + "/Upload/"
 
 app = Flask(__name__)
 
@@ -19,11 +19,11 @@ def index(): # Function for Index, will return Index
 def article(process):
     fileList = []
     if process == "Aula1":
-        fileList = listdir(UPLOAD_FOLDER + "Aula1\\")
+        fileList = listdir(UPLOAD_FOLDER + "Aula1/")
     elif process == "Aula2":
-        fileList = listdir(UPLOAD_FOLDER + "Aula2\\")
+        fileList = listdir(UPLOAD_FOLDER + "Aula2/")
     elif process == "Aula3":
-        fileList = listdir(UPLOAD_FOLDER + "Aula3\\")
+        fileList = listdir(UPLOAD_FOLDER + "Aula3/")
     
     print(fileList)
     return render_template('submit.html', process = process.replace("_", " "), fileList = fileList)
@@ -47,11 +47,11 @@ def upload_file():
             job = request.referrer.split('/')
             print(job[-1])
             if "Aula1" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Aula1\\"
+                upload_folder = UPLOAD_FOLDER + "Aula1/"
             elif "Aula2" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Aula2\\"
+                upload_folder = UPLOAD_FOLDER + "Aula2/"
             elif "Aula3" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Aula3\\"
+                upload_folder = UPLOAD_FOLDER + "Aula3/"
             else:
                 flash('Please clean your cache and try again', 'danger')
                 return redirect(url_for('index'))
