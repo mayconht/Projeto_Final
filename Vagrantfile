@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     end
     vm1.vm.box = "ubuntu/bionic64"
     vm1.vm.hostname = "VM1"
+    vm1.vm.network "public_network", bridge: "eno1"
     vm1.vm.network "private_network", ip: "192.168.2.100"
   end
 
@@ -26,6 +27,7 @@ Vagrant.configure("2") do |config|
     end
     vm2.vm.box = "ubuntu/bionic64"
     vm2.vm.hostname = "VM2"
+    vm2.vm.network "public_network", bridge: "eno1"
     vm2.vm.network "private_network", ip: "192.168.2.101"
   end
 end
