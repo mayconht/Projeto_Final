@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1a.sh"
   config.vm.provision :reload
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1b.sh"
+  config.vm.forward_port 5000, 5000
     vm1.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"
@@ -21,6 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2a.sh"
   config.vm.provision :reload
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2b.sh"
+  config.vm.forward_port 5000, 5000
     vm2.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"
