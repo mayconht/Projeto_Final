@@ -11,13 +11,11 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker
 
 echo "Installing Uploader"
-sudo apt update
-sudo apt upgrade
+sudo git clone https://github.com/mayconht/Projeto_Final
+cd Projeto_Final
 cd Uploader
 sudo docker build -t uploader:latest .
-sudo docker images
-sudo docker ps
 sudo sudo docker run -d -p 5000:5000 uploader:latest
-sudo docker status
+
 
 
