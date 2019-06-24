@@ -5,7 +5,7 @@ import validation
 from os import listdir
 
 ALLOWED_EXTENSIONS = set(['csv', 'xls', 'xlsx'])
-UPLOAD_FOLDER = "Upload\\"
+UPLOAD_FOLDER = os.path.dirname(__file__) + "\\Upload\\"
 
 app = Flask(__name__)
 
@@ -82,19 +82,4 @@ def dated_url_for(endpoint, **values):
 
 if __name__ == '__main__':
     app.secret_key = 'knAOSd7*ASNDO*&Asndo8nd2k3jnrsd1a5s161d'
-    app.run(host= '192.168.2.100', port="5000") 
-
-
-# help
-
-# import pdb
-# pdb.set_trace()
-
-# list
-# cont
-# step
-# next
-# p variavel
-# pp variavel
-
-#f for f in listdir(directory)
+    app.run(host= 'localhost', port="5000") 
