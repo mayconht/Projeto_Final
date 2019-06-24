@@ -9,3 +9,15 @@ sudo apt update
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $USER
 sudo systemctl start docker
+
+echo "Installing Uploader"
+sudo apt update
+sudo apt upgrade
+cd Uploader
+sudo docker build -t uploader:latest .
+sudo docker images
+sudo docker ps
+sudo sudo docker run -d -p 5000:5000 uploader:latest
+sudo docker status
+
+
