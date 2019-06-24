@@ -2,8 +2,6 @@ FROM ubuntu:latest
 LABEL version="1.0.0" description="Uploader" maintainer="grupo 4"
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
-RUN cd Projeto_Final
-RUN cd Uploader
 EXPOSE 5000
 COPY . /Uploader
 WORKDIR /Uploader
