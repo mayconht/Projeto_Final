@@ -1,4 +1,9 @@
-echo "Installing Docker"
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+echo "${red}Este Programa foi criado pelo: ${green}Grupo 4 ${reset}"
+
+echo "${green}Installing Docker${reset}"
 sudo apt update
 sudo apt upgrade
 sudo apt -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -9,3 +14,7 @@ sudo apt update
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $USER
 sudo systemctl start docker
+
+sudo mkdir /var/files/aula1
+sudo mkdir /var/files/aula2
+sudo mkdir /var/files/aula3

@@ -1,10 +1,10 @@
 FROM ubuntu:latest
-LABEL version="1.0.0" description="Uploader" maintainer="grupo 4"
+LABEL version="1.0.0" description="UploaderServer" maintainer="grupo 4"
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
-EXPOSE 5000
-COPY . /Uploader
-WORKDIR /Uploader
+EXPOSE 5001
+COPY . /UploaderClient
+WORKDIR /UploaderClient
 RUN pip install flask
 ENTRYPOINT ["python"]
 CMD ["app.py"]
