@@ -11,6 +11,8 @@ sudo docker run -v /data/:/var/files/ -d -p 5000:5000 uploaderserver:latest --na
 
 echo "${green}Instalando Uploader Client${reset}"
 sudo git clone https://github.com/mayconht/Projeto_Final
+cd ..
+cd ..
 cd Projeto_Final
 cd UploaderClient
 sudo docker build -t uploaderclient:latest .
