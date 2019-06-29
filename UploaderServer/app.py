@@ -81,5 +81,5 @@ def dated_url_for(endpoint, **values):
     return url_for(endpoint, **values)
 
 if __name__ == '__main__':
-    app.secret_key = 'knAOSd7*ASNDO*&Asndo8nd2k3jnrsd1a5s161d'
-    app.run(host='0.0.0.0') 
+    app.secret_key = 'knAOSd7*ASNDO*&Asasdasasgas564g56a46'
+    app.run(host='0.0.0.0' port='5000') 
