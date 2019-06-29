@@ -15,10 +15,8 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 
-sudo mkdir var
-cd var
-sudo mkdir files
-cd files
+sudo mkdir data
+sudo chmod -R 777 data
 sudo mkdir aula1
 sudo mkdir aula2
 sudo mkdir aula3

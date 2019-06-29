@@ -6,7 +6,7 @@ from os import listdir
 
 ALLOWED_EXTENSIONS = set(['csv', 'xls', 'xlsx'])
 # UPLOAD_FOLDER = os.path.dirname(__file__) + "/Upload/"
-UPLOAD_FOLDER = o"/data/"
+UPLOAD_FOLDER = "/Projeto_Final/UploaderClient/files/"
 
 app = Flask(__name__)
 
