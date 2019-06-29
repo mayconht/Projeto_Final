@@ -16,6 +16,7 @@ sudo systemctl start docker
 
 sudo mkdir data
 sudo chmod -R 777 data
+cd data
 sudo mkdir aula1
 sudo mkdir aula2
 sudo mkdir aula3

@@ -5,7 +5,7 @@ import validation
 from os import listdir
 
 ALLOWED_EXTENSIONS = set(['csv', 'xls', 'xlsx'])
-UPLOAD_FOLDER = "/Projeto_Final/UploaderServer/files/"
+UPLOAD_FOLDER = "/Projeto_Final/"
 
 app = Flask(__name__)
 
