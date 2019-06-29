@@ -4,6 +4,7 @@ RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 RUN pip install flask
 EXPOSE 5001
+EXPOSE 5000
 COPY . /UploaderClient
 WORKDIR /UploaderClient
 ENTRYPOINT ["python"]
