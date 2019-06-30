@@ -4,10 +4,8 @@
 
 Vagrant.configure("2") do |config|
   config.vm.define "VM1" do |vm1|
-  config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1a.sh"
-  config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1b.sh"
-    
-
+    vm1.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1a.sh"
+    vm1.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1b.sh"
     vm1.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"
@@ -30,8 +28,9 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "VM2" do |vm2|
-  config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2a.sh"
-  config.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2b.sh"
+
+    vm2.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2a.sh"
+    vm2.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2b.sh"
     vm2.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"
@@ -41,18 +40,18 @@ Vagrant.configure("2") do |config|
     vm2.vm.network "private_network", ip: "192.168.2.101"
     
     vm2.vm.network "forwarded_port",
-      guest: 5000, host: 5000
+      guest: 5000, host: 5500
 	
     vm2.vm.network "forwarded_port",
-      guest: 5001, host: 5001
+      guest: 5001, host: 5501
 
     vm2.vm.network "forwarded_port",
-      guest: 9000, host: 9000
+      guest: 9000, host: 9900
 
     vm2.vm.network "forwarded_port",
-      guest: 9100, host: 9100
+      guest: 9100, host: 9200
 
     vm2.vm.network "forwarded_port",
-      guest: 9090, host: 9090
+      guest: 9090, host: 9990
   end
 end
