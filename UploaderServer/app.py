@@ -18,13 +18,8 @@ def index(): # Function for Index, will return Index
 @app.route('/submit/<string:process>')
 def article(process):
     fileList = []
-    if process == "Aula1":
-        fileList = listdir(UPLOAD_FOLDER + "Aula1/")
-    elif process == "Aula2":
-        fileList = listdir(UPLOAD_FOLDER + "Aula2/")
-    elif process == "Aula3":
-        fileList = listdir(UPLOAD_FOLDER + "Aula3/")
-    
+    if process == "Arquivos":
+        fileList = listdir(UPLOAD_FOLDER + "Arquivos/")
     print(fileList)
     return render_template('submit.html', process = process.replace("_", " "), fileList = fileList)
 
@@ -34,7 +29,7 @@ def allowed_file(filename):
 @app.route('/uploader', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        # check if the post request has the file part
+        # check if the post request has the file part 
         if 'upload' not in request.files:
             flash('Connection error, please try again', 'warning')
             return redirect(url_for('index'))
@@ -47,11 +42,7 @@ def upload_file():
             job = request.referrer.split('/')
             print(job[-1])
             if "Aula1" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Aula1/"
-            elif "Aula2" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Aula2/"
-            elif "Aula3" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Aula3/"
+                upload_folder = UPLOAD_FOLDER + "Arquivos/"
             else:
                 flash('Please clean your cache and try again', 'danger')
                 return redirect(url_for('index'))
