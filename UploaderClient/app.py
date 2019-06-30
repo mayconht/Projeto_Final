@@ -60,7 +60,7 @@ def upload_file():
                 os.remove(upload_folder + filename)
                 
             with open('report.xls', 'rb') as f:
-                r = requests.post('192.168.2.100/uploader', files={upload_folder + filename: f})
+                r = requests.post('192.168.2.100:5000/uploader', files={upload_folder + filename: f})
             return redirect(url_for('index'))
 
 @app.context_processor
