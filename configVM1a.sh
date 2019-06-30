@@ -18,3 +18,14 @@ sudo systemctl start docker
 sudo docker volume create files
 sudo docker volume ls
 
+sudo su
+
+cd /var/lib/docker/volumes/files/_data
+mkdir Aula1
+mkdir Aula1
+mkdir Aula1
+
+exit
+
+
+
