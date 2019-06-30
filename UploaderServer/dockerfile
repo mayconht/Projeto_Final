@@ -7,5 +7,6 @@ EXPOSE 5001
 COPY . /UploaderServer
 WORKDIR /UploaderServer
 RUN pip install flask
+RUN pip install requests
 ENTRYPOINT ["python"]
 CMD ["app.py"]
