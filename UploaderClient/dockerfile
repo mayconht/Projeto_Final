@@ -1,4 +1,4 @@
-FROM prom/prometheus
+FROM ubuntu:latest
 ADD prometheus.yml /etc/prometheus/
 LABEL version="1.0.0" description="UploaderClient" maintainer="grupo 4"
 RUN apt-get update -y
