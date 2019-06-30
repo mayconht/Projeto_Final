@@ -41,12 +41,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             job = request.referrer.split('/')
             print(job[-1])
-            if "Aula1" == job[-1]:
-                upload_folder = UPLOAD_FOLDER + "Arquivos/"
-            else:
-                flash('Please clean your cache and try again', 'danger')
-                return redirect(url_for('index'))
-
+            upload_folder = UPLOAD_FOLDER + "Arquivos/"
             app.config['UPLOAD_FOLDER'] = upload_folder
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             validator = validation.__validator__(upload_folder + filename)
