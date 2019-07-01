@@ -1,18 +1,4 @@
-# Projeto_Final
 
-Instale o Vagrant
-
-Instale o VirtualBox
-
-git clone https://github.com/mayconht/Projeto_Final.git
-
-cd Projeto_Final
-
-vagrant up
-
-acesse http://192.168.2.100:5000
-acesse http://192.168.2.100:5001
-acesse http://192.168.2.101:9090
 
 # Projeto Final Grupo 4
 Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para Network Slice em 5G
@@ -33,6 +19,10 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 * **Jaime Leite exemplo@exemplo** - *AAAAAAAAAAA* - [Jaime's profile](#)
 * **William  exemplo@exemplo** - *AAAAAAAAAAA* - [William's profile](#)
 
-## Authors
-*Para rodar basta executar vagrant up no diretório **Projeto_Final
+## Execução
+*Para rodar basta executar **vagrant up** no diretório **Projeto_Final**
+
+**acesse http://192.168.2.100:5000
+**acesse http://192.168.2.100:5001
+**acesse http://192.168.2.101:9090
 
