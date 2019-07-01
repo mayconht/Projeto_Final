@@ -23,6 +23,8 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 *Para rodar basta executar **vagrant up** no diretório **Projeto_Final**
 
 **acesse http://192.168.2.100:5000**
+
 **acesse http://192.168.2.100:5001**
+
 **acesse http://192.168.2.101:9090**
 
