@@ -5,13 +5,11 @@ global:
 rule_files:
 
 scrape_configs:
-  - job_name: 'Virtual Machine 2'
-    scrape_interval: 5s
+  - job_name: 'Virtual Machine'
     static_configs:
       - targets: ['192.168.2.101:9100']
-
-  - job_name: 'Virtual Machine 1'
-    scrape_interval: 5s
-    static_configs:
+        labels:
+          service: 'VM2'
       - targets: ['192.168.2.100:9100']
-
+        labels:
+          service: 'VM1'
