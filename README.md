@@ -15,9 +15,9 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 
 ## Authors
 
-* **Maycon Douglas mdss@br.ibm.com** - *RPA / java Developer* - [Maycon's profile](https://www.linkedin.com/in/maycondss/)
-* **Jaime Leite exemplo@exemplo** - *AAAAAAAAAAA* - [Jaime's profile](#)
-* **William  exemplo@exemplo** - *AAAAAAAAAAA* - [William's profile](#)
+* **Maycon Douglas contact@maycondss.com** - *RPA / java Developer* - [Maycon's profile](https://www.linkedin.com/in/maycondss/)
+* **Jaime Leite jaime@falcony.com.br** - *Gerente de Portfólio de Projetos* - [Jaime's profile](https://www.linkedin.com/in/jaime-leite-mba-black-belt-%E2%88%B4-0b71a749/)
+* **William Soares Williamsoares1985@gmail.com** - *Analista e desenvolvedor de sistemas* - [William's profile](#)
 
 ## Execução
 *Para rodar basta executar **vagrant up** no diretório **Projeto_Final**
