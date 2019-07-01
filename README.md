@@ -5,8 +5,8 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 
 ### Prerequisites
 
-*Instale a ultima versão do [Vagrant](https://www.vagrantup.com/)
-*Instale a ultima versão do [VirtualBox](https://www.virtualbox.org/)
+* Instale a ultima versão do [Vagrant](https://www.vagrantup.com/)
+* Instale a ultima versão do [VirtualBox](https://www.virtualbox.org/)
 
 ## Wiki & Infos
 
@@ -22,9 +22,9 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 ## Execução
 *Para rodar basta executar **vagrant up** no diretório **Projeto_Final**
 
-**acesse http://192.168.2.100:5000**
+* **acesse http://192.168.2.100:5000**
 
-**acesse http://192.168.2.100:5001**
+* **acesse http://192.168.2.100:5001**
 
-**acesse http://192.168.2.101:9090**
+* **acesse http://192.168.2.101:9090**
 
