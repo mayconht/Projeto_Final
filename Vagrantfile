@@ -53,5 +53,8 @@ Vagrant.configure("2") do |config|
 
     vm2.vm.network "forwarded_port",
       guest: 9090, host: 9990
+
+    vm2.vm.network "forwarded_port",
+      guest: 3000, host: 3000
   end
 end
