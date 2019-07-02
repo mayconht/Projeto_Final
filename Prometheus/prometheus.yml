@@ -1,11 +1,13 @@
 global:
-  scrape_interval:     10s
-  evaluation_interval: 60s
+  scrape_interval:     15s
+  evaluation_interval: 15s
 
-rule_files:
+external_labels:
+    monitor: 'docker-host-alpha'
 
 scrape_configs:
   - job_name: 'Virtual Machine'
+    scrape_interval: 10s
     static_configs:
       - targets: ['192.168.2.101:9100']
         labels:
