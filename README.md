@@ -32,6 +32,7 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 ## Virtual Machine 2
 * **acesse http://192.168.2.101:9090**
 * **acesse http://192.168.2.101:3000**
+* **acesse http://192.168.2.101:8080**
 * **acesse http://192.168.2.101:9100/metrics**
 
 
