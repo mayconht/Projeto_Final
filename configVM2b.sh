@@ -11,6 +11,7 @@ sudo chmod -R 777 /etc/prometheus/
 cd /etc/prometheus/
 sudo rm -rf prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
+wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
 sudo systemctl start prometheus
 sudo docker-compose up
 
