@@ -20,20 +20,6 @@ sudo docker run -d -p 5001:5001 uploaderclient:latest
 
 cd ~
 
-echo "${green}Instalando Prometheus${reset}"
-wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
-apt-get update
-apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
-sudo systemctl stop prometheus
-sudo chmod -R 777 /etc/prometheus/
-cd /etc/prometheus/
-sudo rm -rf prometheus.yml
-wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
-wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
-sudo docker-compose up &
-
-cd ~
-
 echo "${green}Instalando o Node Exporter${reset}"
 wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
 tar xvfz node_exporter-0.18.1.linux-amd64.tar.gz
@@ -46,5 +32,14 @@ sudo systemctl daemon-reload
 sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 
+cd ~
 
-
+sudo docker run \
+  --volume=/:/rootfs:ro \
+  --volume=/var/run:/var/run:rw \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  google/cadvisor:latest

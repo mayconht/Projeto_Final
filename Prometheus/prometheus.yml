@@ -10,7 +10,7 @@ scrape_configs:
         labels: 
           service: "VM 2" 
     
-    - targets: ['192.168.2.100:8081']
+    - targets: ['192.168.2.100:8080']
         labels: 
           service: "VM 1" 
 
