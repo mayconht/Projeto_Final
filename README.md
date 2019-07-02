@@ -35,3 +35,13 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 * **acesse http://192.168.2.101:9100/metrics**
 
 
+## Grafana
+No Dashboard do Grafana vão na aba Data Sources e procurem pelo Prometheus.
+- Adicionem a URL com a porta do Prometheus de vocês
+- No campo Access coloquem Browser
+- Cliquem em "Save & Test"
+
+Procure por Import Dashboard no Grafana. 
+- Adicionem os Dashboards com os seguintes IDs: 193, 893, 1860 e 3662.
+- Não esqueçam de selecionar como Data Source o Prometheus.
+
