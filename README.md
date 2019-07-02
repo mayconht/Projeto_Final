@@ -22,7 +22,16 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 ## Execução
 *Para rodar basta executar **vagrant up** no diretório **Projeto_Final**
 
+
+## Virtual Machine 1
 * **acesse http://192.168.2.100:5000**
 * **acesse http://192.168.2.100:5001**
+* **acesse http://192.168.2.100:8080**
+* **acesse http://192.168.2.100:9100/metrics**
+
+## Virtual Machine 2
 * **acesse http://192.168.2.101:9090**
+* **acesse http://192.168.2.101:3000**
+* **acesse http://192.168.2.101:9100/metrics**
+
 
