@@ -2,16 +2,21 @@ global:
   scrape_interval:     15s
   evaluation_interval: 15s
 
-external_labels:
-    monitor: 'docker-host-alpha'
-
 scrape_configs:
   - job_name: 'Virtual Machine'
     scrape_interval: 10s
     static_configs:
+      
       - targets: ['192.168.2.101:9100']
         labels:
           service: 'VM2'
+      
       - targets: ['192.168.2.100:9100']
         labels:
           service: 'VM1'
+  
+  - job_name: cadvisor
+  scrape_interval: 5s
+  static_configs:
+    - targets:
+      - cadvisor:8080
