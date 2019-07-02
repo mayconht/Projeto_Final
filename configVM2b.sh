@@ -13,6 +13,7 @@ sudo rm -rf prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
 sudo docker-compose up &
+sudo docker-compose ps
 
 cd ~
 
