@@ -3,6 +3,12 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - cadvisor:8080
+      
   - job_name: 'Virtual Machine'
     scrape_interval: 10s
     static_configs:
@@ -15,8 +21,3 @@ scrape_configs:
         labels:
           service: 'VM1'
   
-  - job_name: cadvisor
-    scrape_interval: 5s
-    static_configs:
-    - targets:
-      - cadvisor:8080
