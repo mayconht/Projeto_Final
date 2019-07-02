@@ -5,7 +5,6 @@
 Vagrant.configure("2") do |config|
   config.vm.define "VM1" do |vm1|
     vm1.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1a.sh"
-    vm1.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1b.sh"
     vm1.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"

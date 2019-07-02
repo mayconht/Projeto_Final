@@ -1,8 +1,5 @@
-FROM ubuntu:latest
-ADD prometheus.yml /etc/prometheus/
+FROM python:3
 LABEL version="1.0.0" description="UploaderClient" maintainer="grupo 4"
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
 RUN pip install flask
 RUN pip install requests
 EXPOSE 5001
