@@ -3,11 +3,6 @@ green=`tput setaf 2`
 reset=`tput sgr0`
 echo "${red}Este Programa foi criado pelo: ${green}Grupo 4 ${reset}"
 
-curl https://packagecloud.io/gpg.key | sudo apt-key add -
-curl https://packages.grafana.com/gpg.key | sudo apt-key add -
-sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
-wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
-
 echo "${green}Installing Docker${reset}"
 sudo apt update
 sudo apt -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -20,8 +15,9 @@ sudo apt -y install docker-compose
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 
-
 echo "${green}Instalando Prometheus${reset}"
+wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
+apt-get update
 apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
 sudo systemctl stop prometheus
 sudo chmod -R 777 /etc/prometheus/
@@ -49,6 +45,10 @@ sudo systemctl enable node_exporter
 cd ~
 
 echo "${green}Instalando Grafana${reset}"
+curl https://packagecloud.io/gpg.key | sudo apt-key add -
+curl https://packages.grafana.com/gpg.key | sudo apt-key add -
+sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+sudo apt-get update
 sudo apt -y install grafana
 sudo systemctl start grafana-server
 sudo systemctl enable grafana-server
