@@ -25,6 +25,12 @@ Vagrant.configure("2") do |config|
 
     vm1.vm.network "forwarded_port",
       guest: 9100, host: 9100
+
+    vm1.vm.network "forwarded_port",
+      guest: 8080, host: 8081
+
+    vm1.vm.network "forwarded_port",
+      guest: 6379, host: 6380
   end
 
   config.vm.define "VM2" do |vm2|
@@ -56,5 +62,11 @@ Vagrant.configure("2") do |config|
 
     vm2.vm.network "forwarded_port",
       guest: 3000, host: 3000
+
+    vm2.vm.network "forwarded_port",
+      guest: 8080, host: 8080
+
+    vm2.vm.network "forwarded_port",
+      guest: 6379, host: 6379
   end
 end
