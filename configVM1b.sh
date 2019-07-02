@@ -9,12 +9,7 @@ cd UploaderServer
 sudo docker build -t uploaderserver:latest .
 sudo docker run -d -p 5000:5000 uploaderserver:latest
 
-ls -l
-
-cd ..
-cd ..
-
-ls -l
+cd ~
 
 echo "${green}Instalando Uploader Client${reset}"
 sudo git clone https://github.com/mayconht/Projeto_Final
@@ -23,12 +18,21 @@ cd UploaderClient
 sudo docker build -t uploaderclient:latest .
 sudo docker run -d -p 5001:5001 uploaderclient:latest 
 
-ls -l
+cd ~
 
-cd ..
-cd ..
+echo "${green}Instalando Prometheus${reset}"
+wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
+apt-get update
+apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
+sudo systemctl stop prometheus
+sudo chmod -R 777 /etc/prometheus/
+cd /etc/prometheus/
+sudo rm -rf prometheus.yml
+wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
+wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
+sudo docker-compose up &
 
-ls -l
+cd ~
 
 echo "${green}Instalando o Node Exporter${reset}"
 wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
@@ -43,15 +47,4 @@ sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 
 
-echo "${green}Instalando Prometheus${reset}"
-wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
-apt-get update
-apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
-sudo systemctl stop prometheus
-sudo chmod -R 777 /etc/prometheus/
-cd /etc/prometheus/
-sudo rm -rf prometheus.yml
-wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
-wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
-sudo docker-compose up &
 
