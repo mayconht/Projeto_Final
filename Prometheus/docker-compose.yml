@@ -3,6 +3,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
+    restart: always 
     ports:
     - 9090:9090
     command:
@@ -14,6 +15,7 @@ services:
   cadvisor:
     image: google/cadvisor:latest
     container_name: cadvisor
+    restart: always 
     ports:
     - 8080:8080
     volumes:
@@ -25,6 +27,7 @@ services:
     - redis
   redis:
     image: redis:latest
+    restart: always 
     container_name: redis
     ports:
     - 6379:6379
