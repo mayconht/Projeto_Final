@@ -64,4 +64,5 @@ sudo rm -rf prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
 sudo systemctl start prometheus
+sudo systemctl enable prometheus
 # sudo docker-compose ps

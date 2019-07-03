@@ -35,7 +35,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "VM2" do |vm2|
 
     vm2.vm.provision "shell", path: "configVM2a.sh"
-      run: "always"
     vm2.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"
       vb.cpus = "1"
