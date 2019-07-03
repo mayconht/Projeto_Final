@@ -42,13 +42,26 @@ sudo systemctl enable grafana-server
 
 cd ~
 
+echo "${green}Instalando o cadvisor Exporter${reset}"
+sudo docker run --restart always \
+  --volume=/:/rootfs:ro \
+  --volume=/var/run:/var/run:rw \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  google/cadvisor:latest
+
 echo "${green}Instalando Prometheus${reset}"
-sudo mkdir /etc/prometheus/
+wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
+apt-get update
+apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
+sudo systemctl stop prometheus
 sudo chmod -R 777 /etc/prometheus/
 cd /etc/prometheus/
 sudo rm -rf prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
-
-sudo /etc/prometheus/docker-compose up &
-sudo docker-compose ps
+sudo systemctl start prometheus
+# sudo docker-compose ps

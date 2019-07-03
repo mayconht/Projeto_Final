@@ -47,7 +47,7 @@ sudo systemctl enable node_exporter
 
 cd ~
 
-echo "${green}Instalando o Node Exporter${reset}"
+echo "${green}Instalando o cadvisor Exporter${reset}"
 sudo docker run --restart always \
   --volume=/:/rootfs:ro \
   --volume=/var/run:/var/run:rw \
