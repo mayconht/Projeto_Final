@@ -15,19 +15,6 @@ sudo apt -y install docker-compose
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 
-echo "${green}Instalando Prometheus${reset}"
-wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
-apt-get update
-apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
-sudo systemctl stop prometheus
-sudo chmod -R 777 /etc/prometheus/
-cd /etc/prometheus/
-sudo rm -rf prometheus.yml
-wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
-wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
-sudo docker-compose up &
-sudo docker-compose ps
-
 cd ~
 
 echo "${green}Instalando o Node Exporter${reset}"
@@ -55,5 +42,19 @@ sudo systemctl enable grafana-server
 sudo ufw allow proto tcp from any to any port 3000
 
 cd ~
+
+echo "${green}Instalando Prometheus${reset}"
+wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
+apt-get update
+apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
+sudo systemctl stop prometheus
+sudo chmod -R 777 /etc/prometheus/
+cd /etc/prometheus/
+sudo rm -rf prometheus.yml
+wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/prometheus.yml
+wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
+sudo docker-compose up &
+sudo docker-compose ps
+
 cd /etc/prometheus/
 sudo docker-compose up &
