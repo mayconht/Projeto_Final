@@ -43,7 +43,7 @@ sudo systemctl enable grafana-server
 cd ~
 
 echo "${green}Instalando Prometheus${reset}"
-wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
+# wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg | sudo apt-key add -
 # sudo apt-get update
 # sudo apt -y install prometheus prometheus-node-exporter prometheus-pushgateway prometheus-alertmanager
 # sudo systemctl stop prometheus
