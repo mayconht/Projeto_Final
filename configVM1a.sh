@@ -47,11 +47,6 @@ sudo systemctl enable node_exporter
 
 cd ~
 
-echo "${green}Instalando o mongoDB${reset}"
-
-sudo docker pull tutum/mongodb
-sudo docker run -d -p 27017:27017 -e AUTH=no tutum/mongodb
-
 echo "${green}Instalando o Node Exporter${reset}"
 sudo docker run \
   --volume=/:/rootfs:ro \
