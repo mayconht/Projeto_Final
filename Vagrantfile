@@ -4,10 +4,10 @@
 
 Vagrant.configure("2") do |config|
   config.vm.define "VM1" do |vm1|
-    vm1.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM1a.sh"
+    vm1.vm.provision "shell", path: "configVM1a.sh"
     vm1.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"
-      vb.cpus = "2"
+      vb.cpus = "1"
     end
     vm1.vm.box = "ubuntu/bionic64"
     vm1.vm.hostname = "VM1"
@@ -34,11 +34,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "VM2" do |vm2|
 
-    vm2.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2a.sh"
-    vm2.vm.provision "shell", path: "https://raw.githubusercontent.com/mayconht/Projeto_Final/master/configVM2b.sh"
+    vm2.vm.provision "shell", path: "configVM2a.sh"
+    vm2.provision "shell", inline: "sudo /etc/prometheus/docker-compose up &",
+      run: "always"
     vm2.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"
-      vb.cpus = "2"
+      vb.cpus = "1"
     end
     vm2.vm.box = "ubuntu/bionic64"
     vm2.vm.hostname = "VM2"
