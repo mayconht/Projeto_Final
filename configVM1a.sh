@@ -20,7 +20,7 @@ sudo git clone https://github.com/mayconht/Projeto_Final
 cd Projeto_Final
 cd UploaderServer
 sudo docker build -t uploaderserver:latest .
-sudo docker run -d -p --restart=always 5000:5000 uploaderserver:latest
+sudo docker run --restart always -d -p 5000:5000 uploaderserver:latest
 
 cd ~
 
@@ -29,7 +29,7 @@ sudo git clone https://github.com/mayconht/Projeto_Final
 cd Projeto_Final
 cd UploaderClient
 sudo docker build -t uploaderclient:latest .
-sudo docker run -d -p --restart=always 5001:5001 uploaderclient:latest 
+sudo docker run --restart always -d -p 5001:5001 uploaderclient:latest 
 
 cd ~
 
@@ -48,7 +48,7 @@ sudo systemctl enable node_exporter
 cd ~
 
 echo "${green}Instalando o Node Exporter${reset}"
-sudo docker run --restart=always \
+sudo docker run --restart always \
   --volume=/:/rootfs:ro \
   --volume=/var/run:/var/run:rw \
   --volume=/sys:/sys:ro \
