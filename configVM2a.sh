@@ -50,7 +50,7 @@ sudo docker run --restart always \
   --volume=/var/lib/docker/:/var/lib/docker:ro \
   --publish=8080:8080 \
   --detach=true \
-  --name=cadvisor \
+  --name=cadvisor-VM2 \
   google/cadvisor:latest
 
 echo "${green}Instalando Prometheus${reset}"
@@ -65,4 +65,12 @@ wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/
 wget https://raw.githubusercontent.com/mayconht/Projeto_Final/master/Prometheus/docker-compose.yml
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
-# sudo docker-compose ps
+
+# echo "${green}Instalando PostgreSQL${reset}"
+# sudo docker pull postgres
+# sudo docker run  --name PostgreSQL --restart always -d -p 5432:5432 -e POSTGRES_PASSWORD=docker postgres
+
+
+echo "${green}Instalando MongoDB${reset}"
+sudo docker pull mongo
+sudo docker run --name MongoDB --restart always -d -p 27017-27019:27017-27019 mongo
