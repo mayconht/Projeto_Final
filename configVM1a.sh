@@ -29,7 +29,7 @@ sudo git clone https://github.com/mayconht/Projeto_Final
 cd Projeto_Final
 cd UploaderClient
 sudo docker build -t uploaderclient:latest .
-sudo docker run  -- name UploaderClient --restart always -d -p 5001:5001 uploaderclient:latest 
+sudo docker run  --name UploaderClient --restart always -d -p 5001:5001 uploaderclient:latest 
 
 cd ~
 
@@ -57,6 +57,3 @@ sudo docker run --restart always \
   --detach=true \
   --name=cadvisor-VM1 \
   google/cadvisor:latest
-
-cd ~
-
