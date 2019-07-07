@@ -1,0 +1,10 @@
+FROM python:3
+LABEL version="1.0.0" description="VmDatabase" maintainer="grupo 4"
+RUN pip install flask
+RUN pip install requests
+RUN pip install pymongo
+EXPOSE 27017
+COPY . /VmDatabase
+WORKDIR /VmDatabase
+ENTRYPOINT ["python"]
+CMD ["vmDatabase.py"]

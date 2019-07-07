@@ -12,24 +12,6 @@ Vagrant.configure("2") do |config|
     vm1.vm.box = "ubuntu/bionic64"
     vm1.vm.hostname = "VM1"
     vm1.vm.network "private_network", ip: "192.168.2.100"
-
-    vm1.vm.network "forwarded_port",
-      guest: 5000, host: 5000
-	
-    vm1.vm.network "forwarded_port",
-      guest: 5001, host: 5001
-
-    vm1.vm.network "forwarded_port",
-      guest: 9000, host: 9000
-
-    vm1.vm.network "forwarded_port",
-      guest: 9100, host: 9100
-
-    vm1.vm.network "forwarded_port",
-      guest: 8080, host: 8081
-
-    vm1.vm.network "forwarded_port",
-      guest: 6379, host: 6380
   end
 
   config.vm.define "VM2" do |vm2|
@@ -41,33 +23,6 @@ Vagrant.configure("2") do |config|
     end
     vm2.vm.box = "ubuntu/bionic64"
     vm2.vm.hostname = "VM2"
-    vm2.vm.network "private_network", ip: "192.168.2.101"
-    
-    vm2.vm.network "forwarded_port",
-      guest: 5000, host: 5500
-	
-    vm2.vm.network "forwarded_port",
-      guest: 5001, host: 5501
-
-    vm2.vm.network "forwarded_port",
-      guest: 9000, host: 9900
-
-    vm2.vm.network "forwarded_port",
-      guest: 9100, host: 9200
-
-    vm2.vm.network "forwarded_port",
-      guest: 9090, host: 9990
-
-    vm2.vm.network "forwarded_port",
-      guest: 3000, host: 3000
-
-    vm2.vm.network "forwarded_port",
-      guest: 8080, host: 8080
-
-    vm2.vm.network "forwarded_port",
-      guest: 6379, host: 6379
-
-    vm2.vm.network "forwarded_port",
-      guest: 5432, host: 5432
+    vm2.vm.network "private_network", ip: "192.168.2.101"  
   end
 end
