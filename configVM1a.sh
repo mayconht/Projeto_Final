@@ -46,8 +46,8 @@ cd ~
 echo "${green}Instalando VMGetInfo Client${reset}"
 cd Projeto_Final
 cd VmDatabase
-sudo docker build -t vmdatabase:latest .
-sudo docker run  --name VmDatabase --restart always -d -p 27017:27017 vmdatabase:latest
+sudo docker build -t vminfodatabase:latest .
+sudo docker run  --name VmInfoDatabase --restart always -d -p 27018:27017 vminfodatabase:latest
 
 cd ~
 
