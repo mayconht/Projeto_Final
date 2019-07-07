@@ -15,8 +15,11 @@ sudo apt -y install docker-compose
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 
-echo "${green}Instalando Uploader Server${reset}"
+cd ~
+
 sudo git clone https://github.com/mayconht/Projeto_Final
+
+echo "${green}Instalando Uploader Server${reset}"
 cd Projeto_Final
 cd UploaderServer
 sudo docker build -t uploaderserver:latest .
@@ -25,11 +28,26 @@ sudo docker run --name UploaderServer --restart always -d -p 5000:5000 uploaders
 cd ~
 
 echo "${green}Instalando Uploader Client${reset}"
-sudo git clone https://github.com/mayconht/Projeto_Final
 cd Projeto_Final
 cd UploaderClient
 sudo docker build -t uploaderclient:latest .
 sudo docker run  --name UploaderClient --restart always -d -p 5001:5001 uploaderclient:latest 
+
+cd ~
+
+echo "${green}Instalando DockerGetInfo Client${reset}"
+cd Projeto_Final
+cd DockerDatabase
+sudo docker build -t dockerdatabase:latest .
+sudo docker run  --name DockerDatabase --restart always -d -p 27017:27017 dockerdatabase:latest 
+
+cd ~
+
+echo "${green}Instalando VMGetInfo Client${reset}"
+cd Projeto_Final
+cd VmDatabase
+sudo docker build -t vmdatabase:latest .
+sudo docker run  --name VmDatabase --restart always -d -p 27017:27017 vmdatabase:latest
 
 cd ~
 
