@@ -1,6 +1,6 @@
 
 
-# Projeto Final Grupo 4
+# THNS5
 Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para Network Slice em 5G
 
 ### Prerequisites
@@ -15,9 +15,7 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 
 ## Authors
 
-* **Maycon Douglas contact@maycondss.com** - *RPA / java / Python Developer* - [Maycon's profile](https://www.linkedin.com/in/maycondss/)
-* **Jaime Leite jaime@falcony.com.br** - *Gerente de Portfólio de Projetos* - [Jaime's profile](https://www.linkedin.com/in/jaime-leite-mba-black-belt-%E2%88%B4-0b71a749/)
-* **William Soares Williamsoares1985@gmail.com** - *Analista e desenvolvedor de sistemas* - [William's profile](#)
+* **Maycon Douglas maycondss@live.com** - *RPA / java / NodeJs Developer* - [Maycon's profile](https://www.linkedin.com/in/maycondss/)
 
 ## Execução
 *Para rodar basta executar **vagrant up** no diretório **Projeto_Final**
@@ -38,11 +36,11 @@ Este é projeto final do grupo 4 da matéria de Tecnologias habilitadores para N
 
 ## Grafana
 No Dashboard do Grafana vão na aba Data Sources e procurem pelo Prometheus.
-- Adicionem a URL com a porta do Prometheus de vocês
+- Adicione a URL com a porta do Prometheus de vocês
 - No campo Access coloquem Browser
 - Cliquem em "Save & Test"
 
 Procure por Import Dashboard no Grafana. 
-- Adicionem os Dashboards com os seguintes IDs: 193, 893, 1860 e 3662.
-- Não esqueçam de selecionar como Data Source o Prometheus.
+- Adicione os Dashboards com os seguintes IDs: 193, 893, 1860 e 3662.
+- Não esqueça de selecionar como Data Source o Prometheus.
 
